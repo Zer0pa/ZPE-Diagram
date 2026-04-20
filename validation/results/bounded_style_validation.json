@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-04-20T00:00:00Z",
+  "product_state": "bounded_adopter",
+  "scope": {
+    "base": "structural line geometry",
+    "style": [
+      "8-color palette",
+      "quantized stroke width"
+    ],
+    "state": "draw order",
+    "out_of_scope": [
+      "fill",
+      "dash encode path",
+      "taper",
+      "pressure variation",
+      "out-of-palette colors"
+    ]
+  },
+  "summary": {
+    "structural_exact_worst": 1.0,
+    "style_exact_worst": 1.0,
+    "stroke_order_exact_worst": 1.0,
+    "reject_probe_rejection_rate": 1.0,
+    "style_suffix_words_per_styled_path": 3
+  },
+  "in_scope": {
+    "triangle_red_w4": {
+      "structural_exact_rate": 1.0,
+      "style_exact_rate": 1.0,
+      "stroke_order_exact": 1.0,
+      "word_count": 391
+    },
+    "triangle_blue_w1": {
+      "structural_exact_rate": 1.0,
+      "style_exact_rate": 1.0,
+      "stroke_order_exact": 1.0,
+      "word_count": 391
+    },
+    "square_red_w4": {
+      "structural_exact_rate": 1.0,
+      "style_exact_rate": 1.0,
+      "stroke_order_exact": 1.0,
+      "word_count": 19
+    },
+    "parallel_bars_ab": {
+      "structural_exact_rate": 1.0,
+      "style_exact_rate": 1.0,
+      "stroke_order_exact": 1.0,
+      "word_count": 18
+    },
+    "parallel_bars_ba": {
+      "structural_exact_rate": 1.0,
+      "style_exact_rate": 1.0,
+      "stroke_order_exact": 1.0,
+      "word_count": 18
+    },
+    "t_mixed": {
+      "structural_exact_rate": 1.0,
+      "style_exact_rate": 1.0,
+      "stroke_order_exact": 1.0,
+      "word_count": 18
+    }
+  },
+  "controls": {
+    "same_content_different_style": {
+      "structural_exact": 1.0,
+      "style_separation": 1.0
+    },
+    "different_content_same_style": {
+      "structural_separation": 1.0,
+      "style_exact": 1.0
+    },
+    "same_base_same_style_multiset_different_order": {
+      "structural_exact": 1.0,
+      "style_exact": 1.0,
+      "stroke_order_separation": 1.0
+    }
+  },
+  "rejects": {
+    "filled_triangle": {
+      "accepted": false,
+      "error": "diagram fill out of scope on path 0: '#00ff00'"
+    },
+    "palette_escape": {
+      "accepted": false,
+      "error": "diagram stroke color out of scope on path 0: '#123456'"
+    },
+    "dashed_triangle": {
+      "accepted": false,
+      "error": "diagram dash out of scope on path 0: '8,4'"
+    }
+  }
+}
