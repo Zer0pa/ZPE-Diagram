@@ -4,6 +4,7 @@
 
 - label: `bounded adopter`
 - scope: structural line geometry plus bounded style payload
+- authority commit: `363f93807897`
 
 ## Governing Artifacts
 
@@ -17,4 +18,3 @@
 - no dash encode path
 - no taper or pressure claim
 - no out-of-palette color identity claim
-

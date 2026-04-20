@@ -40,7 +40,7 @@ ZPE Diagram is an always-in-beta diagram encoding product for controlled line-ba
 | Field | Value |
 |-------|-------|
 | Verdict | PASS |
-| Commit SHA | PENDING_AUTHORITY_SHA |
+| Commit SHA | 363f93807897 |
 | Confidence | 100% |
 | Source | validation/results/bounded_style_validation.json |
 
@@ -79,6 +79,10 @@ pip install . pytest
 python proofs/artifacts/reproduce_validation.py
 pytest tests/test_style_authority.py
 ```
+
+### Citation
+
+Use [CITATION.cff](CITATION.cff) for software citation metadata.
 
 ### Open Risks (Non-Blocking)
 
