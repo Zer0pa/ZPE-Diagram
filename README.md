@@ -1,5 +1,9 @@
 # ZPE Diagram
 
+<p align="left">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-SAL%20v7.0-e5e7eb?labelColor=111111" alt="License: SAL v7.0"></a>
+</p>
+
 ## What This Is
 
 ZPE Diagram is an always-in-beta bounded adopter for controlled line-based SVG inputs. It preserves structural geometry, a bounded style channel, and draw order inside a narrow public scope that is useful now for deterministic diagram pipelines. The public claim is structural-with-style only, and it does not claim general SVG coverage.

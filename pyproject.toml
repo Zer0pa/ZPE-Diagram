@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "zpe-diagram"
 version = "0.1.0"
+license = "LicenseRef-Zer0pa-SAL-7.0"
 description = "Bounded structural-with-style diagram encoding."
 readme = "README.md"
 requires-python = ">=3.11"
