@@ -2,7 +2,7 @@
 
 ## What This Is
 
-ZPE Diagram is an always-in-beta diagram encoding product for controlled line-based SVG inputs. It preserves structural geometry, a bounded style channel, and draw order inside a narrow public scope that is useful now for deterministic diagram pipelines. It does not claim general SVG coverage.
+ZPE Diagram is an always-in-beta bounded adopter for controlled line-based SVG inputs. It preserves structural geometry, a bounded style channel, and draw order inside a narrow public scope that is useful now for deterministic diagram pipelines. The public claim is structural-with-style only, and it does not claim general SVG coverage.
 
 | Field | Value |
 |-------|-------|
@@ -37,10 +37,12 @@ ZPE Diagram is an always-in-beta diagram encoding product for controlled line-ba
 
 ## Commercial Readiness
 
+This local remediation surface is pending final authority restamp.
+
 | Field | Value |
 |-------|-------|
 | Verdict | PASS |
-| Commit SHA | 363f93807897 |
+| Commit SHA | UNSTAMPED |
 | Confidence | 100% |
 | Source | validation/results/bounded_style_validation.json |
 
@@ -73,12 +75,17 @@ ZPE Diagram is an always-in-beta diagram encoding product for controlled line-ba
 ## Quick Start
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install . pytest
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev]"
 python proofs/artifacts/reproduce_validation.py
-pytest tests/test_style_authority.py
+python -m pytest tests/test_style_authority.py
 ```
+
+### Scope
+
+See [SCOPE.md](SCOPE.md) for the plain-language product boundary.
 
 ### Citation
 

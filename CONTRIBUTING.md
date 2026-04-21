@@ -12,8 +12,7 @@ Thanks for working on `zpe-diagram`.
 ## Submission Notes
 
 - Run `python proofs/artifacts/reproduce_validation.py`.
-- Run `pytest tests/test_style_authority.py`.
+- Run `python -m pytest tests/test_style_authority.py`.
 - Update proof artifacts if any promoted metric changes.
 
-By submitting a contribution, you confirm you have the right to submit the work under the repository license.
-
+By submitting a contribution, you confirm you have the right to submit the work and that the public claim remains backed by committed proof artifacts.

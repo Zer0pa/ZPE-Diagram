@@ -5,10 +5,8 @@ type: software
 authors:
   - name: Zer0pa
 version: 0.1.0
-license: LicenseRef-Zer0pa-SAL-6.2
 repository-code: https://github.com/Zer0pa/ZPE-Diagram
 abstract: >
   ZPE Diagram is a bounded diagram encoder for structural line geometry plus a
   narrow style channel covering an 8-color palette, quantized stroke width, and
   preserved draw order.
-

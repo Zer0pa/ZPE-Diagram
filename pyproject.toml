@@ -7,7 +7,6 @@ name = "zpe-diagram"
 version = "0.1.0"
 description = "Bounded structural-with-style diagram encoding."
 readme = "README.md"
-license = "LicenseRef-Zer0pa-SAL-6.2"
 requires-python = ">=3.11"
 dependencies = [
   "svgpathtools>=1.7.2",
