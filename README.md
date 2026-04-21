@@ -37,12 +37,12 @@ ZPE Diagram is an always-in-beta bounded adopter for controlled line-based SVG i
 
 ## Commercial Readiness
 
-This local remediation surface is pending final authority restamp.
+This release candidate is restamped to the verified source commit below.
 
 | Field | Value |
 |-------|-------|
 | Verdict | PASS |
-| Commit SHA | UNSTAMPED |
+| Commit SHA | 2881a8fe941b |
 | Confidence | 100% |
 | Source | validation/results/bounded_style_validation.json |
 
