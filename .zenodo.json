@@ -1,0 +1,27 @@
+{
+  "title": "ZPE Diagram",
+  "description": "ZPE Diagram is an always-in-beta bounded adopter for controlled line-based SVG inputs. It preserves structural geometry, a bounded style channel, and draw order inside a narrow public scope that is useful now for deterministic diagram pipelines.",
+  "creators": [
+    {
+      "name": "Zer0pa (Pty) Ltd"
+    }
+  ],
+  "keywords": [
+    "diagram",
+    "svg",
+    "geometry",
+    "polyline",
+    "style",
+    "quantization",
+    "encoding"
+  ],
+  "license": "LicenseRef-Zer0pa-SAL-7.0",
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Zer0pa/ZPE-Diagram",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}

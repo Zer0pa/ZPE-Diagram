@@ -42,7 +42,7 @@ This release candidate is restamped to the verified source commit below.
 | Field | Value |
 |-------|-------|
 | Verdict | PASS |
-| Commit SHA | 2881a8fe941b |
+| Commit SHA | 6deadf0af754 |
 | Confidence | 100% |
 | Source | validation/results/bounded_style_validation.json |
 

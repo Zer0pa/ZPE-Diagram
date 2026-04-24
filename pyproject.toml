@@ -7,20 +7,32 @@ name = "zpe-diagram"
 version = "0.1.0"
 description = "Bounded structural-with-style diagram encoding."
 readme = "README.md"
+license = { text = "LicenseRef-Zer0pa-SAL-7.0" }
 requires-python = ">=3.11"
 dependencies = [
   "svgpathtools>=1.7.2",
 ]
 authors = [
-  { name = "Zer0pa" },
+  { name = "Zer0pa (Pty) Ltd", email = "architects@zer0pa.ai" },
 ]
-keywords = ["diagram", "encoding", "svg", "style", "geometry"]
+keywords = ["diagram", "svg", "geometry", "polyline", "style", "quantization", "encoding"]
 classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: Other/Proprietary License",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.11",
   "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering",
 ]
+
+[project.urls]
+Homepage = "https://github.com/Zer0pa/ZPE-Diagram"
+Documentation = "https://github.com/Zer0pa/ZPE-Diagram#readme"
+Repository = "https://github.com/Zer0pa/ZPE-Diagram"
+Issues = "https://github.com/Zer0pa/ZPE-Diagram/issues"
+Changelog = "https://github.com/Zer0pa/ZPE-Diagram/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
