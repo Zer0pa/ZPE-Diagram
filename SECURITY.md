@@ -1,8 +1,47 @@
 # Security Policy
 
-If you find a security-sensitive issue in `zpe-diagram`, use GitHub Security Advisories for the repository if that route is available.
+## Supported Scope
 
-If advisories are unavailable, open a minimal issue that says a private security follow-up is needed and do not include exploit details in the public thread.
+This policy covers the `zpe-diagram` Python package, bounded validation assets
+under `validation/`, proof artifacts and manifests under `proofs/`, and
+security-sensitive repo assets used for release or verification.
 
-This repo focuses on deterministic local encoding. Scope disputes about claimed behavior belong in the `evidence_dispute` issue template, not the security channel.
+What counts as a security issue here:
 
+- arbitrary code execution, privilege escalation, or data exfiltration through package or validation paths
+- secrets or tokens committed to the repo
+- vulnerable release or validation-custody behavior
+- supply-chain issues in declared dependencies or published artifacts
+
+What does not count as a security issue here:
+
+- benchmark losses
+- codec-quality regressions
+- documentation disputes about technical claims
+
+## Reporting
+
+Do not open a public issue for a security vulnerability.
+
+Report privately through:
+
+- GitHub Private Vulnerability Reporting
+- `architects@zer0pa.ai`
+
+Include:
+
+- affected component
+- reproduction steps or proof of concept
+- severity and impact
+- suggested remediation if you have one
+
+## Response Targets
+
+| Stage | Target timeframe |
+|---|---|
+| Acknowledgement | within 5 business days |
+| Initial triage | within 10 business days |
+| Remediation or mitigation plan | post-triage, based on confirmed severity |
+
+We follow coordinated disclosure and will not take legal action against
+good-faith security research that follows this policy.
