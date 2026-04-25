@@ -11,7 +11,9 @@ The current public evidence surface is limited to:
 - draw order as explicit state
 - explicit rejection of fill, dashed input, and out-of-palette colors
 
-Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py)
+Compass-8 posture: NO as a product claim. Any 8-direction run packing is an internal technique only; the product claim is the structural-geometry base / bounded-style fiber separation.
+
+Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py), [LICENSE](LICENSE)
 
 ## CI-Backed Checks
 
