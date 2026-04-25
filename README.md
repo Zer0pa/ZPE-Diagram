@@ -2,7 +2,9 @@
 
 ## What This Is
 
-ZPE Diagram is a bounded adopter for structural-with-style diagram encoding.
+ZPE Diagram is a bounded encoding product for structural-with-style diagram encoding. It is one of the 17 independent encoding products in the Zer0pa portfolio, alongside Image, Mental, Music, Smell, Taste, Touch, and the earlier public lanes.
+
+The product claim is the structural-geometry base / bounded-style fiber separation: exact geometry reconstruction, exact color and stroke-width preservation, and explicit draw-order encoding — on every in-scope case in the public proof packet. **1.000 structural, style, and draw-order fidelity (6/6 cases); 1.000 rejection rate (3/3 out-of-scope probes).** Useful now, improving continuously.
 
 The current public evidence surface is limited to:
 
@@ -10,8 +12,6 @@ The current public evidence surface is limited to:
 - bounded style preservation for the frozen 8-color palette plus quantized stroke width
 - draw order as explicit state
 - explicit rejection of fill, dashed input, and out-of-palette colors
-
-Compass-8 posture: NO as a product claim. Any 8-direction run packing is an internal technique only; the product claim is the structural-geometry base / bounded-style fiber separation.
 
 Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py), [LICENSE](LICENSE)
 
@@ -27,7 +27,7 @@ All results from [`validation/results/bounded_style_validation.json`](validation
 | `reject_probe_rejection_rate` | **1.000** (3/3 probes) | Every out-of-scope input (fill, palette escape, dash) rejected at encode time |
 | Style overhead | **3 words per styled path** | Compact: style suffix adds exactly 3 extension words per path |
 
-**Separation controls** (same artifact, different axis → no aliasing):
+**Separation controls** (same artifact, different axis — no aliasing):
 
 | Control | Result |
 |---------|--------|
@@ -67,6 +67,10 @@ python -m pytest tests/test_style_authority.py
 ## Scope
 
 See [SCOPE.md](SCOPE.md) for the plain-language product boundary.
+
+## License
+
+Zer0pa Source-Available License v7.0 — see [LICENSE](LICENSE).
 
 ## Citation
 
