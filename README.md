@@ -13,7 +13,9 @@ The current public evidence surface is limited to:
 - draw order as explicit state
 - explicit rejection of fill, dashed input, and out-of-palette colors
 
-Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py), [LICENSE](LICENSE)
+Compass-8 posture (per V2 §7.2): NO. Any 8-direction technique used internally is implementation, not product claim.
+
+Licensed under the [Zer0pa Source-Available License v7.0](LICENSE). Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py)
 
 ## Validation Summary
 
@@ -67,10 +69,6 @@ python -m pytest tests/test_style_authority.py
 ## Scope
 
 See [SCOPE.md](SCOPE.md) for the plain-language product boundary.
-
-## License
-
-Zer0pa Source-Available License v7.0 — see [LICENSE](LICENSE).
 
 ## Citation
 
