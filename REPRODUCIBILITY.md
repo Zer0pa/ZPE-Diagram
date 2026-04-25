@@ -8,7 +8,7 @@
 
 ## Golden-Bundle Hash
 
-will be populated by the `receipt-bundle.yml` workflow in Wave 3
+Not yet committed. Will be anchored by the `receipt-bundle.yml` workflow before the next public release.
 
 ## Verification Command
 
