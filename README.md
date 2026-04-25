@@ -55,6 +55,10 @@ All results from [`validation/results/bounded_style_validation.json`](validation
 | `validation/results/bounded_style_validation.json` | VERIFIED |
 | `tests/test_style_authority.py` | VERIFIED |
 
+## Comp Benchmarks
+
+ZPE-Diagram is a structural-fidelity codec, not a compression codec. The product claim is exact geometry/style/order separation, not byte reduction. At current corpus scope (6 synthetic SVG cases of 50–200 bytes), no compression comparator produces meaningful results — gzip overhead exceeds the input size. A comparison against gzipped raw SVG, gzipped Mermaid/Graphviz DSL, or PNG-of-rendered-diagram would be apples-to-oranges (different codec semantics) or dominated by overhead. Compass-8 posture is NO per V2 §7.2.
+
 ## Quick Start
 
 ```bash
