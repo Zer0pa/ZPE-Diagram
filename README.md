@@ -15,6 +15,28 @@ Compass-8 posture: NO as a product claim. Any 8-direction run packing is an inte
 
 Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py), [LICENSE](LICENSE)
 
+## Validation Summary
+
+All results from [`validation/results/bounded_style_validation.json`](validation/results/bounded_style_validation.json) (regenerable via V_02):
+
+| Metric | Value | What it means |
+|--------|-------|---------------|
+| `structural_exact_worst` | **1.000** (6/6 cases) | Exact geometry reconstruction on every in-scope case |
+| `style_exact_worst` | **1.000** (6/6 cases) | Exact color + stroke-width preservation on every in-scope case |
+| `stroke_order_exact_worst` | **1.000** (6/6 cases) | Exact draw-order preservation on every in-scope case |
+| `reject_probe_rejection_rate` | **1.000** (3/3 probes) | Every out-of-scope input (fill, palette escape, dash) rejected at encode time |
+| Style overhead | **3 words per styled path** | Compact: style suffix adds exactly 3 extension words per path |
+
+**Separation controls** (same artifact, different axis → no aliasing):
+
+| Control | Result |
+|---------|--------|
+| Same geometry, different style → style codes differ | `style_separation = 1.0` |
+| Different geometry, same style → geometry codes differ | `structural_separation = 1.0` |
+| Same elements, different draw order → order codes differ | `stroke_order_separation = 1.0` |
+
+> Beta posture. These results cover the bounded in-scope surface (line-based SVG, frozen palette, solid strokes). No claim is made for arbitrary SVG.
+
 ## CI-Backed Checks
 
 | Code | Check | Evidence |
