@@ -2,57 +2,23 @@
 
 ## What This Is
 
-ZPE Diagram is an always-in-beta bounded adopter for controlled line-based SVG inputs. It preserves structural geometry, a bounded style channel, and draw order inside a narrow public scope that is useful now for deterministic diagram pipelines. The public claim is structural-with-style only, and it does not claim general SVG coverage.
+ZPE Diagram is a bounded adopter for structural-with-style diagram encoding.
 
-| Field | Value |
-|-------|-------|
-| Architecture | DIAGRAM_STREAM |
-| Encoding | DIAGRAM_STYLE_SUFFIX_V1 |
+The current public evidence surface is limited to:
 
-## Key Metrics
+- structural line geometry
+- bounded style preservation for the frozen 8-color palette plus quantized stroke width
+- draw order as explicit state
+- explicit rejection of fill, dashed input, and out-of-palette colors
 
-| Metric | Value | Baseline |
+Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py)
+
+## CI-Backed Checks
+
+| Code | Check | Evidence |
 |-------|-------|-------|
-| STRUCTURAL_EXACT | 1.00 | Reference |
-| STYLE_EXACT | 1.00 | Reference |
-| ORDER_STATE | 6/6 | Cases |
-| REJECT_PROBES | 3/3 | Unsupported |
-
-> Source: [bounded_style_validation.json](validation/results/bounded_style_validation.json), [CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md)
-
-## What We Prove
-
-- Structural line geometry survives the public word stream exactly on the bounded validation set.
-- The bounded style channel preserves only the frozen 8-color palette plus quantized stroke width.
-- Draw order survives as explicit state on the same bounded validation set.
-- Unsupported fill, dashed input, and out-of-palette colors are rejected instead of silently collapsing.
-
-## What We Don't Claim
-
-- We do not claim fill support.
-- We do not claim dashed support on the encode path.
-- We do not claim taper, pressure variation, or broader authorial-style recovery.
-- We do not claim out-of-palette color identity.
-- We do not claim arbitrary SVG coverage or general illustration semantics.
-
-## Commercial Readiness
-
-This release candidate is restamped to the verified source commit below.
-
-| Field | Value |
-|-------|-------|
-| Verdict | PASS |
-| Commit SHA | 6deadf0af754 |
-| Confidence | 100% |
-| Source | validation/results/bounded_style_validation.json |
-
-## Tests and Verification
-
-| Code | Check | Verdict |
-|-------|-------|-------|
-| V_01 | `pytest tests/test_style_authority.py` | PASS |
-| V_02 | `python proofs/artifacts/reproduce_validation.py` | PASS |
-| V_03 | bounded reject probes for fill, dashed input, and palette escape | PASS |
+| V_01 | `pytest tests/test_style_authority.py` | exercises style preservation, draw-order preservation, and bounded reject behavior |
+| V_02 | `python proofs/artifacts/reproduce_validation.py` | regenerates `validation/results/bounded_style_validation.json` used by the authority packet |
 
 ## Proof Anchors
 
@@ -62,15 +28,6 @@ This release candidate is restamped to the verified source commit below.
 | `proofs/artifacts/reproduce_validation.py` | VERIFIED |
 | `validation/results/bounded_style_validation.json` | VERIFIED |
 | `tests/test_style_authority.py` | VERIFIED |
-
-## Repo Shape
-
-| Field | Value |
-|-------|-------|
-| Proof Anchors | 4 |
-| Modality Lanes | 1 |
-| Authority Source | `validation/results/bounded_style_validation.json` |
-| Package Root | `src/zpe_diagram` |
 
 ## Quick Start
 
@@ -83,16 +40,10 @@ python proofs/artifacts/reproduce_validation.py
 python -m pytest tests/test_style_authority.py
 ```
 
-### Scope
+## Scope
 
 See [SCOPE.md](SCOPE.md) for the plain-language product boundary.
 
-### Citation
+## Citation
 
 Use [CITATION.cff](CITATION.cff) for software citation metadata.
-
-### Open Risks (Non-Blocking)
-
-- The public scope is intentionally narrow.
-- The encode path rejects fills, dashed input, and out-of-palette colors.
-- Wider SVG claims need new proof artifacts before they belong in this repo.
