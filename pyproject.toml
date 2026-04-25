@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=69", "wheel"]
+requires = ["setuptools>=69,<82", "wheel>=0.43,<1"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -19,7 +19,6 @@ keywords = ["diagram", "svg", "geometry", "stroke-order", "style-channel"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
-  "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.11",
   "Operating System :: OS Independent",
