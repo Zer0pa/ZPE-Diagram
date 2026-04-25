@@ -4,7 +4,7 @@
 
 - label: `bounded adopter`
 - scope: structural line geometry plus bounded style payload
-- authority commit: `363f93807897`
+- authority commit: `6deadf0af754`
 
 ## Governing Artifacts
 
