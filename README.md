@@ -77,3 +77,9 @@ See [SCOPE.md](SCOPE.md) for the plain-language product boundary.
 ## Citation
 
 Use [CITATION.cff](CITATION.cff) for software citation metadata.
+
+## Upcoming Workstreams
+
+This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
+
+- **Real-world SVG corpus expansion** — Active Engineering. Expand corpus from 6 synthetic SVGs to: Mermaid output (~30 cases), Graphviz output (~30 cases), one open UI icon set (~50 cases). Re-run existing fidelity test harness. Compass-8 NO posture preserved.
