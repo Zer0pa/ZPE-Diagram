@@ -17,47 +17,72 @@ Compass-8 posture (per V2 §7.2): NO. Any 8-direction technique used internally 
 
 Licensed under the [Zer0pa Source-Available License v7.0](LICENSE). Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py)
 
-## Validation Summary
+| Field | Value |
+|-------|-------|
+| Architecture | DIAGRAM_STREAM |
+| Encoding | DIAGRAM_BOUNDED_STYLE_V1 |
 
-All results from [`validation/results/bounded_style_validation.json`](validation/results/bounded_style_validation.json) (regenerable via V_02):
+## Key Metrics
 
-| Metric | Value | What it means |
-|--------|-------|---------------|
-| `structural_exact_worst` | **1.000** (6/6 cases) | Exact geometry reconstruction on every in-scope case |
-| `style_exact_worst` | **1.000** (6/6 cases) | Exact color + stroke-width preservation on every in-scope case |
-| `stroke_order_exact_worst` | **1.000** (6/6 cases) | Exact draw-order preservation on every in-scope case |
-| `reject_probe_rejection_rate` | **1.000** (3/3 probes) | Every out-of-scope input (fill, palette escape, dash) rejected at encode time |
-| Style overhead | **3 words per styled path** | Compact: style suffix adds exactly 3 extension words per path |
+| Metric | Value | Baseline |
+|--------|-------|----------|
+| `structural_exact_worst` | **1.000** (6/6 cases) | exact geometry reconstruction on every in-scope case |
+| `style_exact_worst` | **1.000** (6/6 cases) | exact color + stroke-width preservation on every in-scope case |
+| `stroke_order_exact_worst` | **1.000** (6/6 cases) | exact draw-order preservation on every in-scope case |
+| `reject_probe_rejection_rate` | **1.000** (3/3 probes) | every out-of-scope input (fill, palette escape, dash) rejected at encode time |
 
-**Separation controls** (same artifact, different axis — no aliasing):
+> Source: [`validation/results/bounded_style_validation.json`](validation/results/bounded_style_validation.json), regenerable via V_02.
 
-| Control | Result |
-|---------|--------|
-| Same geometry, different style → style codes differ | `style_separation = 1.0` |
-| Different geometry, same style → geometry codes differ | `structural_separation = 1.0` |
-| Same elements, different draw order → order codes differ | `stroke_order_separation = 1.0` |
+## What We Prove
 
-> Beta posture. These results cover the bounded in-scope surface (line-based SVG, frozen palette, solid strokes). No claim is made for arbitrary SVG.
+- Exact geometry reconstruction on every in-scope case in the public proof packet (structural_exact_worst = 1.000, 6/6 cases). Proof anchor: `validation/results/bounded_style_validation.json`.
+- Exact color and stroke-width preservation on every in-scope case (style_exact_worst = 1.000, 6/6 cases). Proof anchor: `validation/results/bounded_style_validation.json`.
+- Exact draw-order preservation on every in-scope case (stroke_order_exact_worst = 1.000, 6/6 cases). Proof anchor: `validation/results/bounded_style_validation.json`.
+- Every out-of-scope input (fill, palette escape, dashed stroke) is rejected at encode time (reject_probe_rejection_rate = 1.000, 3/3 probes). Proof anchor: `tests/test_style_authority.py`.
+- Structural and style axes are non-aliasing: same geometry/different style → style codes differ; different geometry/same style → geometry codes differ; same elements/different order → order codes differ. All separation metrics = 1.0.
 
-## CI-Backed Checks
+## What We Don't Claim
 
-| Code | Check | Evidence |
-|-------|-------|-------|
-| V_01 | `pytest tests/test_style_authority.py` | exercises style preservation, draw-order preservation, and bounded reject behavior |
-| V_02 | `python proofs/artifacts/reproduce_validation.py` | regenerates `validation/results/bounded_style_validation.json` used by the authority packet |
+- No fill encoding. Fill inputs are explicitly rejected.
+- No palette escape. Only the frozen 8-color palette is in scope; out-of-palette colors are rejected.
+- No dashed stroke encoding. Dashed inputs are rejected at encode time.
+- No arbitrary SVG coverage. The in-scope surface is line-based SVG with the frozen palette and solid strokes.
+- No Compass-8 product claim. Any 8-direction technique is internal implementation, not product claim (Compass-8 posture: NO, per V2 §7.2).
+- No compression claim. ZPE-Diagram is a structural-fidelity codec, not a compression codec.
+- No claims outside the 6 in-scope synthetic SVG cases currently in the public proof packet.
+
+## Commercial Readiness
+
+| Field | Value |
+|-------|-------|
+| Verdict | STAGED |
+| Commit SHA | 71a5950 |
+| Source | `validation/results/bounded_style_validation.json` |
+
+## Tests and Verification
+
+| Code | Check | Verdict |
+|------|-------|---------|
+| V_01 | `pytest tests/test_style_authority.py` — exercises style preservation, draw-order preservation, and bounded reject behavior | PASS |
+| V_02 | `python proofs/artifacts/reproduce_validation.py` — regenerates `validation/results/bounded_style_validation.json` used by the authority packet | PASS |
 
 ## Proof Anchors
 
 | Path | State |
-|-------|-------|
+|------|-------|
 | `proofs/manifests/CURRENT_AUTHORITY_PACKET.md` | VERIFIED |
 | `proofs/artifacts/reproduce_validation.py` | VERIFIED |
 | `validation/results/bounded_style_validation.json` | VERIFIED |
 | `tests/test_style_authority.py` | VERIFIED |
 
-## Comp Benchmarks
+## Repo Shape
 
-ZPE-Diagram is a structural-fidelity codec, not a compression codec. The product claim is exact geometry/style/order separation, not byte reduction. At current corpus scope (6 synthetic SVG cases of 50–200 bytes), no compression comparator produces meaningful results — gzip overhead exceeds the input size. A comparison against gzipped raw SVG, gzipped Mermaid/Graphviz DSL, or PNG-of-rendered-diagram would be apples-to-oranges (different codec semantics) or dominated by overhead. Compass-8 posture is NO per V2 §7.2.
+| Field | Value |
+|-------|-------|
+| Proof Anchors | 4 |
+| Modality Lanes | 1 |
+| Authority Source | `validation/results/bounded_style_validation.json` |
+| Compass-8 Posture | NO (internal technique only) |
 
 ## Quick Start
 
@@ -70,16 +95,16 @@ python proofs/artifacts/reproduce_validation.py
 python -m pytest tests/test_style_authority.py
 ```
 
-## Scope
-
-See [SCOPE.md](SCOPE.md) for the plain-language product boundary.
-
-## Citation
-
-Use [CITATION.cff](CITATION.cff) for software citation metadata.
-
 ## Upcoming Workstreams
 
 This section captures the active lane priorities — what the next agent or contributor picks up, and what investors should expect. Cadence is continuous, not milestoned.
 
 - **Real-world SVG corpus expansion** — Active Engineering. Expand corpus from 6 synthetic SVGs to: Mermaid output (~30 cases), Graphviz output (~30 cases), one open UI icon set (~50 cases). Re-run existing fidelity test harness. Compass-8 NO posture preserved.
+
+### Scope
+
+See [SCOPE.md](SCOPE.md) for the plain-language product boundary.
+
+### Citation
+
+Use [CITATION.cff](CITATION.cff) for software citation metadata.
