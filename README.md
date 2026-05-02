@@ -2,43 +2,69 @@
 
 ## What This Is
 
-ZPE Diagram is a bounded encoding product for structural-with-style diagram encoding. It is one of the 17 independent encoding products in the Zer0pa portfolio, alongside Image, Mental, Music, Smell, Taste, Touch, and the earlier public lanes.
+Bounded structural-with-style diagram encoding. Graph geometry, visual style, and draw order survive within the declared validation scope.
 
 The product claim is the structural-geometry base / bounded-style fiber separation: exact geometry reconstruction, exact color and stroke-width preservation, and explicit draw-order encoding — on every in-scope case in the public proof packet. **1.000 structural, style, and draw-order fidelity (6/6 cases); 1.000 rejection rate (3/3 out-of-scope probes).** Useful now, improving continuously.
 
 The current public evidence surface is limited to:
 
-- structural line geometry
-- bounded style preservation for the frozen 8-color palette plus quantized stroke width
-- draw order as explicit state
-- explicit rejection of fill, dashed input, and out-of-palette colors
+## Codec Mechanics
 
-Compass-8 posture (per V2 §7.2): NO. Any 8-direction technique used internally is implementation, not product claim.
-
-Licensed under the [Zer0pa Source-Available License v7.0](LICENSE). Source: [validation/results/bounded_style_validation.json](validation/results/bounded_style_validation.json), [proofs/manifests/CURRENT_AUTHORITY_PACKET.md](proofs/manifests/CURRENT_AUTHORITY_PACKET.md), [tests/test_style_authority.py](tests/test_style_authority.py)
+<p>
+  <img src=".github/assets/readme/lane-mechanics/DIAGRAM.gif" alt="ZPE-Diagram Codec Mechanics animation" width="100%">
+</p>
 
 | Field | Value |
-|-------|-------|
+| ------- | ------- |
 | Architecture | DIAGRAM_STREAM |
 | Encoding | DIAGRAM_BOUNDED_STYLE_V1 |
+| Mechanics Asset | `.github/assets/readme/lane-mechanics/DIAGRAM.gif` |
 
 ## Key Metrics
 
 | Metric | Value | Baseline |
-|--------|-------|----------|
-| `structural_exact_worst` | **1.000** (6/6 cases) | exact geometry reconstruction on every in-scope case |
-| `style_exact_worst` | **1.000** (6/6 cases) | exact color + stroke-width preservation on every in-scope case |
-| `stroke_order_exact_worst` | **1.000** (6/6 cases) | exact draw-order preservation on every in-scope case |
-| `reject_probe_rejection_rate` | **1.000** (3/3 probes) | every out-of-scope input (fill, palette escape, dash) rejected at encode time |
+| -------- | ------- | ---------- |
+| structural_exact_worst | 1.000 (6/6 cases) | exact geometry reconstruction on every in-scope case |
+| style_exact_worst | 1.000 (6/6 cases) | exact color + stroke-width preservation on every in-scope case |
+| stroke_order_exact_worst | 1.000 (6/6 cases) | exact draw-order preservation on every in-scope case |
+| reject_probe_rejection_rate | 1.000 (3/3 probes) | every out-of-scope input (fill, palette escape, dash) rejected at encode time |
 
 > Source: [`validation/results/bounded_style_validation.json`](validation/results/bounded_style_validation.json), regenerable via V_02.
 
+## Repo Identity
+
+| Field | Value |
+| ------- | ------- |
+| Identifier | ZPE-Diagram |
+| Repository | https://github.com/Zer0pa/ZPE-Diagram |
+| Section | encoding |
+| Visibility | PUBLIC |
+| Architecture | DIAGRAM_STREAM |
+| Encoding | DIAGRAM_BOUNDED_STYLE_V1 |
+| Commit SHA | 71a5950 |
+| License | SAL-7.0 |
+| Authority Source | validation/results/bounded_style_validation.json |
+
+## Readiness
+
+| Field | Value |
+| ------- | ------- |
+| Verdict | STAGED |
+| Checks | 2/2 |
+| Anchors | 4 display anchors |
+| Commit | 71a5950 |
+| Authority | validation/results/bounded_style_validation.json |
+
+### Honest Blocker
+
+We do not claim fill support; We do not claim dashed support on the encode path; We do not claim taper, pressure variation, or broader authorial-style recovery.
+
 ## What We Prove
 
-- Exact geometry reconstruction on every in-scope case in the public proof packet (structural_exact_worst = 1.000, 6/6 cases). Proof anchor: `validation/results/bounded_style_validation.json`.
-- Exact color and stroke-width preservation on every in-scope case (style_exact_worst = 1.000, 6/6 cases). Proof anchor: `validation/results/bounded_style_validation.json`.
-- Exact draw-order preservation on every in-scope case (stroke_order_exact_worst = 1.000, 6/6 cases). Proof anchor: `validation/results/bounded_style_validation.json`.
-- Every out-of-scope input (fill, palette escape, dashed stroke) is rejected at encode time (reject_probe_rejection_rate = 1.000, 3/3 probes). Proof anchor: `tests/test_style_authority.py`.
+- Exact geometry reconstruction on every in-scope case in the public proof packet (structural_exact_worst = 1.000, 6/6 cases). Proof anchor: validation/results/bounded_style_validation.json.
+- Exact color and stroke-width preservation on every in-scope case (style_exact_worst = 1.000, 6/6 cases). Proof anchor: validation/results/bounded_style_validation.json.
+- Exact draw-order preservation on every in-scope case (stroke_order_exact_worst = 1.000, 6/6 cases). Proof anchor: validation/results/bounded_style_validation.json.
+- Every out-of-scope input (fill, palette escape, dashed stroke) is rejected at encode time (reject_probe_rejection_rate = 1.000, 3/3 probes). Proof anchor: tests/test_style_authority.py.
 - Structural and style axes are non-aliasing: same geometry/different style → style codes differ; different geometry/same style → geometry codes differ; same elements/different order → order codes differ. All separation metrics = 1.0.
 
 ## What We Don't Claim
@@ -51,25 +77,17 @@ Licensed under the [Zer0pa Source-Available License v7.0](LICENSE). Source: [val
 - No compression claim. ZPE-Diagram is a structural-fidelity codec, not a compression codec.
 - No claims outside the 6 in-scope synthetic SVG cases currently in the public proof packet.
 
-## Commercial Readiness
-
-| Field | Value |
-|-------|-------|
-| Verdict | STAGED |
-| Commit SHA | 71a5950 |
-| Source | `validation/results/bounded_style_validation.json` |
-
-## Tests and Verification
+## Verification Status
 
 | Code | Check | Verdict |
-|------|-------|---------|
-| V_01 | `pytest tests/test_style_authority.py` — exercises style preservation, draw-order preservation, and bounded reject behavior | PASS |
-| V_02 | `python proofs/artifacts/reproduce_validation.py` — regenerates `validation/results/bounded_style_validation.json` used by the authority packet | PASS |
+| ------ | ------- | --------- |
+| V_01 | pytest tests/test_style_authority.py — exercises style preservation, draw-order preservation, and bounded reject behavior | PASS |
+| V_02 | python proofs/artifacts/reproduce_validation.py — regenerates validation/results/bounded_style_validation.json used by the authority packet | PASS |
 
 ## Proof Anchors
 
 | Path | State |
-|------|-------|
+| ------ | ------- |
 | `proofs/manifests/CURRENT_AUTHORITY_PACKET.md` | VERIFIED |
 | `proofs/artifacts/reproduce_validation.py` | VERIFIED |
 | `validation/results/bounded_style_validation.json` | VERIFIED |
@@ -78,11 +96,13 @@ Licensed under the [Zer0pa Source-Available License v7.0](LICENSE). Source: [val
 ## Repo Shape
 
 | Field | Value |
-|-------|-------|
-| Proof Anchors | 4 |
+| ------- | ------- |
+| Proof Anchors | 4 display anchors |
 | Modality Lanes | 1 |
-| Authority Source | `validation/results/bounded_style_validation.json` |
-| Compass-8 Posture | NO (internal technique only) |
+| Architecture | DIAGRAM_STREAM |
+| Encoding | DIAGRAM_BOUNDED_STYLE_V1 |
+| Verification | 2/2 checks |
+| Authority Source | validation/results/bounded_style_validation.json |
 
 ## Quick Start
 
