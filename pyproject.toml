@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Bounded structural-with-style diagram encoding."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "LicenseRef-Zer0pa-SAL-7.0" }
+license = { text = "LicenseRef-Zer0pa-SAL-7.1" }
 dependencies = [
   "svgpathtools>=1.7.2",
 ]

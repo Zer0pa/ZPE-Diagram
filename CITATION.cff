@@ -2,7 +2,7 @@ cff-version: 1.2.0
 title: ZPE Diagram
 message: If you use this repo, please cite the software and the bounded validation artifact.
 type: software
-license: LicenseRef-Zer0pa-SAL-7.0
+license: LicenseRef-Zer0pa-SAL-7.1
 authors:
   - name: Zer0pa (Pty) Ltd
     email: architects@zer0pa.ai
