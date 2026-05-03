@@ -41,8 +41,8 @@ The current public evidence surface is limited to:
 | Visibility | PUBLIC |
 | Architecture | DIAGRAM_STREAM |
 | Encoding | DIAGRAM_BOUNDED_STYLE_V1 |
-| Commit SHA | 71a5950 |
-| License | SAL-7.0 |
+| Commit SHA | 42dd648 |
+| License | SAL-7.1 |
 | Authority Source | validation/results/bounded_style_validation.json |
 
 ## Readiness
