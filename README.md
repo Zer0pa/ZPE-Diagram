@@ -52,7 +52,7 @@ The current public evidence surface is limited to:
 | Verdict | STAGED |
 | Checks | 2/2 |
 | Anchors | 4 display anchors |
-| Commit | 71a5950 |
+| Commit | 8333e75 |
 | Authority | validation/results/bounded_style_validation.json |
 
 ### Honest Blocker
