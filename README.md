@@ -65,7 +65,7 @@ python -m pytest tests/test_style_authority.py
 <table width="100%">
 <tr>
 <td width="50%" valign="top">
-<div><b>03 · VALUE</b></div>
+<div><b>03 · VALUE OF MARKET</b></div>
       <div><span>$1.9B</span> <span>2030</span></div>
       <div>Diagramming software by 2030; ZPE-Diagram keeps line-based drawings <b>readable as drawings after export</b>.</div>
 </td>
