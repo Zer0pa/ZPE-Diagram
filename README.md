@@ -1,9 +1,6 @@
 # ZPE-Diagram
 
-## Install / Developer Commands
-
-<!-- INSTALL-DX:START -->
-#### Package Install
+## Package Install
 
 Installable package: `python3.11 -m pip install zpe-diagram`.
 Current release: `0.1.0` on [PyPI](https://pypi.org/project/zpe-diagram/).
@@ -13,29 +10,9 @@ Source: [Zer0pa/ZPE-Diagram](https://github.com/Zer0pa/ZPE-Diagram/).
 python3.11 -m pip install zpe-diagram
 ```
 
-Import smoke:
+For full install, smoke, source, and developer commands, [click here](#install-developer-commands-detailed).
 
-```bash
-python3.11 - <<'PY'
-import importlib.metadata as md
-import zpe_diagram
-
-print("zpe-diagram", md.version("zpe-diagram"))
-PY
-```
-
-Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.<!-- INSTALL-DX:END -->
-
-#### Quick Start
-
-```bash
-python3 -m venv .venv
-. .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e ".[dev]"
-python proofs/artifacts/reproduce_validation.py
-python -m pytest tests/test_style_authority.py
-```
+---
 
 <table width="100%">
 <tr>
@@ -307,3 +284,44 @@ python -m pytest tests/test_style_authority.py
 </td>
 </tr>
 </table>
+
+---
+
+<a id="install-developer-commands-detailed"></a>
+
+## Install / Developer Commands Detailed
+
+<!-- INSTALL-DX:START -->
+#### Package Install
+
+Installable package: `python3.11 -m pip install zpe-diagram`.
+Current release: `0.1.0` on [PyPI](https://pypi.org/project/zpe-diagram/).
+Source: [Zer0pa/ZPE-Diagram](https://github.com/Zer0pa/ZPE-Diagram/).
+
+```bash
+python3.11 -m pip install zpe-diagram
+```
+
+Import smoke:
+
+```bash
+python3.11 - <<'PY'
+import importlib.metadata as md
+import zpe_diagram
+
+print("zpe-diagram", md.version("zpe-diagram"))
+PY
+```
+
+Install success only proves package acquisition/import. Product scope, stale PyPI state, platform limits, and blockers remain in the front-door sections below.<!-- INSTALL-DX:END -->
+
+#### Quick Start
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev]"
+python proofs/artifacts/reproduce_validation.py
+python -m pytest tests/test_style_authority.py
+```
