@@ -19,6 +19,7 @@ For full install, smoke, source, and developer commands, [click here](#install-d
 <td width="100%" valign="top">
 <div><span><b>00 · ZPE-DIAGRAM</b> · GRAPH-STRUCTURE</span> <span>RESEARCH-READY · PYPI CONNECTED</span></div>
       <h1>Encoding The <span>Grammar Of Diagrams</span></h1>
+      <p><strong>Live experiment. Not a release. Ambition headlined. Claims bounded.</strong></p>
       <p>Bounded structural diagram codec · ZPE-Diagram · PyPI <em>zpe-diagram</em> v0.1.0 · github.com/Zer0pa/ZPE-Diagram</p>
       <p>Most diagram exports flatten a structured drawing into a picture. Six declared synthetic SVGs round-trip through ZPE-Diagram as explicit graph state &mdash; geometry, color, stroke width, and draw order all exact. Three out-of-scope probes &mdash; fills, dashed strokes, palette escapes &mdash; are refused at the door instead of silently approximated. This is <em>not</em> compression and <em>not</em> a general SVG renderer. It is a bounded codec that keeps the rules that make a diagram readable as a diagram.</p>
 </td>
